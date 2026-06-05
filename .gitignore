@@ -1,0 +1,16 @@
+# 1. Ignore raw sequencing data files (Massive files)
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+
+# 2. Ignore Kallisto reference indices and raw software binaries
+*.idx
+sratoolkit*/
+
+# 3. Ignore raw Kallisto output directories
+result_SRR*/
+
+# 4. Ignore Mac operating system junk
+.DS_Store
