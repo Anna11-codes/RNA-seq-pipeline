@@ -1,0 +1,26 @@
+---
+title: "Human RNA-Seq Differential Expression Analysis"
+author: "Ananya Bisht"
+date: "2026-06-06"
+output: html_document
+---
+
+## Setup and Package Loading
+```{r setup, message=FALSE}
+
+library(tximport)
+library(DESeq2)
+library(tidyverse)
+library(pheatmap)
+library(EnhancedVolcano)
+
+# We will write the tximport code here tomorrow
+
+
+# We will run the DESeq2 mathematical modeling herev
+
+
+# We will generate the PCA, Volcano, and Heatmap plots here
+
+
+

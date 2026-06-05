@@ -14,3 +14,9 @@ result_SRR*/
 
 # 4. Ignore Mac operating system junk
 .DS_Store
+
+# 5. Ignore R Markdown temporary cache and outputs
+*.html
+*_files/
+*_cache/
+.Rproj.user/
