@@ -8,19 +8,62 @@ output: html_document
 ## Setup and Package Loading
 ```{r setup, message=FALSE}
 
+setwd("/Users/bishtananya/Desktop/Bioinformatics")
 library(tximport)
 library(DESeq2)
 library(tidyverse)
 library(pheatmap)
 library(EnhancedVolcano)
+```
 
-# We will write the tximport code here tomorrow
+```{r setup, message=FALSE}
+# 
+library(biomaRt)
+
+# 1. Connect to the human Ensembl database (GRCh38 build)
+# Note: This might take 15–30 seconds to establish a secure connection
+mart <- useMart("ensembl", dataset = "hsapiens_gene_ensembl")
+
+# 2. Download the transcript IDs and their matching gene symbols
+tx2gene <- getBM(
+    attributes = c("ensembl_transcript_id_version", "external_gene_name"),
+    mart = mart
+)
+
+# 3. Rename columns so tximport recognizes them automatically
+colnames(tx2gene) <- c("tx_id", "gene_id")
+
+# 4. Take a quick peek at your new mapping table
+head(tx2gene)
+
+```
 
 
-# We will run the DESeq2 mathematical modeling herev
+```{r setup, message=FALSE}
+# importing kallisto data into R
+
+# 1. Tell R to look in your current working directory
+dir <- getwd()
+
+# 2. LIST ALL 8 OF YOUR EXACT SRR NUMBERS HERE:
+samples <- c("SRR28816867", "SRR28816868", "SRR28816869", "SRR28816870", 
+             "SRR28816871", "SRR28816872", "SRR28816873", "SRR28816874") 
+
+# 3. Automatically construct the file paths to all 8 abundance.tsv files
+files <- file.path(dir, paste0("result_", samples), "abundance.tsv")
+names(files) <- samples
+
+# 4. Run the tximport translator
+txi <- tximport(
+    files = files, 
+    type = "kallisto", 
+    tx2gene = tx2gene, 
+    ignoreTxVersion = TRUE
+)
+
+```
 
 
+```{r setup, message=FALSE}
 # We will generate the PCA, Volcano, and Heatmap plots here
-
-
 
