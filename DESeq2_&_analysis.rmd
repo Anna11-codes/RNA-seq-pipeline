@@ -21,7 +21,6 @@ library(EnhancedVolcano)
 library(biomaRt)
 
 # 1. Connect to the human Ensembl database (GRCh38 build)
-# Note: This might take 15–30 seconds to establish a secure connection
 mart <- useMart("ensembl", dataset = "hsapiens_gene_ensembl")
 
 # 2. Download the transcript IDs and their matching gene symbols
@@ -36,24 +35,30 @@ colnames(tx2gene) <- c("tx_id", "gene_id")
 # 4. Take a quick peek at your new mapping table
 head(tx2gene)
 
+
+# 5. Clean the transcript IDs by removing the "." and any numbers after it
+tx2gene$tx_id <- gsub("\\..*$", "", tx2gene$tx_id)
+
 ```
 
 
 ```{r setup, message=FALSE}
 # importing kallisto data into R
 
-# 1. Tell R to look in your current working directory
-dir <- getwd()
+# Use the absolute path to your folder
+base_dir <- "/Users/bishtananya/Desktop/Bioinformatics"
 
-# 2. LIST ALL 8 OF YOUR EXACT SRR NUMBERS HERE:
-samples <- c("SRR28816867", "SRR28816868", "SRR28816869", "SRR28816870", 
-             "SRR28816871", "SRR28816872", "SRR28816873", "SRR28816874") 
+samples <- c("SRR28816867", "SRR28816868","SRR28816869", "SRR28816870", "SRR28816871", "SRR28816872", "SRR28816873", "SRR28816874") 
 
-# 3. Automatically construct the file paths to all 8 abundance.tsv files
-files <- file.path(dir, paste0("result_", samples), "abundance.tsv")
+# Construct the paths explicitly
+files <- file.path(base_dir, paste0("result_", samples), "abundance.tsv")
 names(files) <- samples
 
-# 4. Run the tximport translator
+
+# 2. Look at your table again to make sure the decimals are gone
+head(tx2gene)
+
+# Run the translator
 txi <- tximport(
     files = files, 
     type = "kallisto", 
@@ -64,6 +69,194 @@ txi <- tximport(
 ```
 
 
-```{r setup, message=FALSE}
-# We will generate the PCA, Volcano, and Heatmap plots here
+
+```{r}
+# 1. Create a matching data frame for your 8 samples
+# WARNING: Make sure the order of "Control" and "Treated" perfectly matches the order of your 'samples' vector!
+sampleTable <- data.frame(
+    sampleName = samples,
+    condition = factor(c("Treated", "Control", "Treated", "Control", 
+                         "Treated", "Control", "Treated", "Control"))
+)
+
+# 2. Set the row names to match your sample IDs
+rownames(sampleTable) <- sampleTable$sampleName
+
+# 3. Double-check your metadata table
+sampleTable
+
+library(DESeq2)
+
+```
+
+```{r}
+library(DESeq2)
+
+# 1. Build the dataset object
+dds <- DESeqDataSetFromTximport(txi, colData = sampleTable, design = ~ condition)
+
+# 2. RUN ONLY THE MATH (We use parallel = FALSE to prevent Mac memory freezes)
+dds <- DESeq(dds, parallel = FALSE)
+
+# 3. Pull the raw results immediately
+res <- results(dds, contrast = c("condition", "Treated", "Control"))
+
+# 4. View it as a raw table first (avoids tidyverse conflicts for now)
+head(res)
+
+```
+```{r}
+summary(res)
+```
+```{r}
+library(tidyverse)
+
+# 1. Turn the raw results into a clean, queryable data frame
+res_df <- as.data.frame(res) %>%
+    rownames_to_column(var = "gene_name") %>%
+    as_tibble()
+
+# 2. Filter for significant UP-regulated genes (expression doubled)
+sig_up <- res_df %>%
+    filter(padj < 0.05 & log2FoldChange > 1) %>%
+    arrange(padj)
+
+# 3. Filter for significant DOWN-regulated genes (expression halved)
+sig_down <- res_df %>%
+    filter(padj < 0.05 & log2FoldChange < -1) %>%
+    arrange(padj)
+
+# 4. See how many genes made the cut!
+nrow(sig_up)
+
+nrow(sig_down)
+
+```
+
+
+```{r}
+
+library(tidyverse)
+
+# 1. Permanently filter out the structural background noise using regex
+biologically_clean_df <- biologically_clean_df %>% 
+    filter(!str_detect(gene_name, "rRNA|RNA5-|^7SK|^U\\d+|^H[1-4][A-Z]|^H\\d|MT-|^LINC|^SNORD|^MIR|^RNU|^RNY"))
+
+# 2. Re-run your statistical thresholds using the newly polished data
+sig_up <- biologically_clean_df %>% 
+    filter(padj < 0.05 & log2FoldChange > 1) %>% 
+    arrange(padj)
+
+sig_down <- biologically_clean_df %>% 
+    filter(padj < 0.05 & log2FoldChange < -1) %>% 
+    arrange(padj)
+
+# 3. Overwrite the saved CSV files so your spreadsheets match your graph
+write_csv(sig_up, "DESeq2_significant_UP_genes.csv")
+write_csv(sig_down, "DESeq2_significant_DOWN_genes.csv")
+
+```
+
+```{r}
+EnhancedVolcano(biologically_clean_df,
+    lab = biologically_clean_df$gene_name,
+    x = 'log2FoldChange',
+    y = 'padj',
+    pCutoff = 0.05,
+    FCcutoff = 1.0,
+    pointSize = 2.0,
+    labSize = 4.0,
+    title = 'Treated vs Control Differential Expression',
+    subtitle = 'Pristine Protein-Coding mRNAs Only',
+    legendPosition = 'right')
+```
+
+```{r}
+
+library(DESeq2)
+library(pheatmap)
+library(tidyverse)
+
+# 1. Transform the raw counts data to stabilize the variance
+vsd <- vst(dds, blind = FALSE)
+
+# 2. Get the gene names of your top 50 most statistically significant hits
+# (We combine top 25 UP and top 25 DOWN for a beautifully balanced look)
+top_up_genes <- sig_up %>% head(25) %>% pull(gene_name)
+top_down_genes <- sig_down %>% head(25) %>% pull(gene_name)
+top_genes <- c(top_up_genes, top_down_genes)
+
+# 3. Extract the normalized expression matrix for just these 50 genes
+mat <- assay(vsd)[top_genes, ]
+
+# 4. Change row names from Ensembl IDs to your clean gene symbols
+# (Assuming your vsd matrix row names match your original dataframe order)
+rownames(mat) <- top_genes
+
+# 5. Create a clean metadata dataframe to color-code the top of your columns
+df_annotation <- as.data.frame(colData(dds)["condition"])
+
+# 6. Draw the beautiful heatmap!
+pheatmap(mat, 
+         annotation_col = df_annotation, 
+         scale = "row",                # Scales genes so we see RELATIVE changes
+         clustering_distance_rows = "correlation",
+         clustering_distance_cols = "euclidean",
+         show_rownames = TRUE, 
+         show_colnames = FALSE,         # Hides messy raw sample names
+         fontsize_row = 7,
+         cellheight = 10,
+         main = "Top 50 Differentially Expressed Genes")
+
+
+```
+
+```{r}
+library(gprofiler2)
+library(tidyverse)
+
+# 1. Extract just the gene names from your upregulated list
+upregulated_genes <- sig_up %>% pull(gene_name)
+
+# 2. Run the enrichment profile against Human database (hsapiens)
+go_results <- gost(query = upregulated_genes, 
+                   organism = "hsapiens", 
+                   ordered_query = TRUE, # Prioritizes your most significant genes
+                   sources = c("GO:BP", "KEGG")) # Focuses on Biological Processes and KEGG pathways
+
+# 3. Plot the interactive results chart
+gostplot(go_results, capped = TRUE, interactive = TRUE)
+```
+
+```{r}
+
+
+# Convert the results into a readable dataframe and look at the top rows
+go_table <- as.data.frame(go_results$result) %>%
+  dplyr::select(source, term_id, term_name, p_value, intersection_size) %>%
+  arrange(p_value)
+
+# Print the top 10 results to your console
+head(go_table, 10)
+
+# Save the pathway results to your project folder
+write_csv(go_table, "GO_and_KEGG_Enrichment_Results.csv")
+
+```
+
+```{r}
+
+# Filter for the top 10 biological processes and plot them
+top_10_go <- go_table %>% 
+  filter(source == "GO:BP") %>% 
+  head(10)
+
+ggplot(top_10_go, aes(x = reorder(term_name, -log10(p_value)), y = -log10(p_value))) +
+  geom_bar(stat = "identity", fill = "steelblue") +
+  coord_flip() +
+  labs(x = "Biological Process", y = "-log10(p-value)", 
+       title = "Top 10 Enriched Biological Processes") +
+  theme_minimal()
+
+```
 
