@@ -1,0 +1,256 @@
+source,term_id,term_name,p_value,intersection_size
+GO:BP,GO:0044281,small molecule metabolic process,3.3189809865854775e-23,277
+GO:BP,GO:0009056,catabolic process,7.055529106354673e-21,374
+GO:BP,GO:0019538,protein metabolic process,3.446852442201553e-20,564
+GO:BP,GO:0090407,organophosphate biosynthetic process,9.538438305127642e-18,127
+GO:BP,GO:0019637,organophosphate metabolic process,2.7973480477404956e-16,184
+GO:BP,GO:0160307,protein biosynthetic process,2.846196133068373e-16,125
+GO:BP,GO:0006412,translation,2.846196133068373e-16,125
+GO:BP,GO:1901135,carbohydrate derivative metabolic process,9.48434089482608e-13,159
+GO:BP,GO:0006753,nucleoside phosphate metabolic process,4.210070871549385e-12,120
+GO:BP,GO:1901293,nucleoside phosphate biosynthetic process,4.7899398721473695e-12,74
+GO:BP,GO:0055086,nucleobase-containing small molecule metabolic process,8.932050320832619e-12,122
+GO:BP,GO:0033554,cellular response to stress,1.2767236757219044e-11,230
+GO:BP,GO:0009060,aerobic respiration,2.1886324782904855e-11,65
+GO:BP,GO:0000278,mitotic cell cycle,3.028997993713e-11,131
+GO:BP,GO:1901137,carbohydrate derivative biosynthetic process,3.0347616963257055e-11,106
+GO:BP,GO:0044283,small molecule biosynthetic process,3.873086170407214e-11,109
+GO:BP,GO:0009057,macromolecule catabolic process,7.454807549046738e-11,203
+GO:BP,GO:0006793,phosphorus metabolic process,1.0059317410309361e-10,291
+GO:BP,GO:0007049,cell cycle,1.329758652783058e-10,170
+GO:BP,GO:0006796,phosphate-containing compound metabolic process,1.459101989013445e-10,290
+GO:BP,GO:0002181,cytoplasmic translation,1.7472383624403142e-10,50
+GO:BP,GO:0043436,oxoacid metabolic process,3.208010754485114e-10,131
+GO:BP,GO:0051301,cell division,5.71332310080813e-10,106
+GO:BP,GO:0006082,organic acid metabolic process,5.78588212156853e-10,131
+GO:BP,GO:0019752,carboxylic acid metabolic process,1.1878102537597683e-9,127
+GO:BP,GO:0015980,energy derivation by oxidation of organic compounds,1.3528580950828257e-9,62
+GO:BP,GO:0045333,cellular respiration,1.921960615389443e-9,53
+GO:BP,GO:0007005,mitochondrion organization,2.172322329304297e-9,79
+GO:BP,GO:0006629,lipid metabolic process,5.434054810962624e-9,196
+GO:BP,GO:1903047,mitotic cell cycle process,7.825859542328045e-9,109
+GO:BP,GO:0030163,protein catabolic process,8.05999502678435e-9,154
+GO:BP,GO:0019941,modification-dependent protein catabolic process,2.7708619523472997e-8,111
+GO:BP,GO:0046907,intracellular transport,3.8350554136033604e-8,146
+GO:BP,GO:0006091,generation of precursor metabolites and energy,4.316818201311996e-8,64
+GO:BP,GO:0043632,modification-dependent macromolecule catabolic process,4.3795911864736504e-8,111
+GO:BP,GO:0006511,ubiquitin-dependent protein catabolic process,4.889084619856241e-8,109
+GO:BP,GO:0006996,organelle organization,4.9455455221630715e-8,276
+GO:BP,GO:0006119,oxidative phosphorylation,6.138484944636174e-8,38
+GO:BP,GO:0140053,mitochondrial gene expression,8.646508778437813e-8,41
+GO:BP,GO:0006520,amino acid metabolic process,1.6508758447492743e-7,35
+GO:BP,GO:0051205,protein insertion into membrane,1.9513717900079345e-7,19
+GO:BP,GO:0010498,proteasomal protein catabolic process,2.0219502672472492e-7,81
+GO:BP,GO:0022402,cell cycle process,2.6135371913610516e-7,161
+GO:BP,GO:0016567,protein ubiquitination,5.317459456655282e-7,115
+GO:BP,GO:0008610,lipid biosynthetic process,5.624644705374701e-7,113
+GO:BP,GO:0006790,sulfur compound metabolic process,8.124741081163922e-7,55
+GO:BP,GO:0009142,nucleoside triphosphate biosynthetic process,1.0786238217896527e-6,31
+GO:BP,GO:0009894,regulation of catabolic process,1.0922871037496945e-6,116
+GO:BP,GO:0072521,purine-containing compound metabolic process,1.4544353809432775e-6,95
+GO:BP,GO:0051726,regulation of cell cycle,1.77867287498194e-6,112
+GO:BP,GO:0072522,purine-containing compound biosynthetic process,2.022426129356772e-6,47
+GO:BP,GO:0009201,ribonucleoside triphosphate biosynthetic process,3.2160628631656094e-6,31
+GO:BP,GO:0006418,tRNA aminoacylation for protein translation,3.3998016015394666e-6,14
+GO:BP,GO:1902600,proton transmembrane transport,3.565578486738571e-6,27
+GO:BP,GO:0009117,nucleotide metabolic process,3.5836232289651376e-6,72
+GO:BP,GO:0032446,protein modification by small protein conjugation,3.6354162466500777e-6,122
+GO:BP,GO:0032543,mitochondrial translation,3.9779807838476235e-6,32
+KEGG,KEGG:05012,Parkinson disease,6.409598919170004e-6,23
+GO:BP,GO:0043161,proteasome-mediated ubiquitin-dependent protein catabolic process,6.946533368237732e-6,76
+GO:BP,GO:0009165,nucleotide biosynthetic process,8.63035907884298e-6,44
+GO:BP,GO:0051649,establishment of localization in cell,8.801872879669118e-6,183
+GO:BP,GO:0006914,autophagy,8.986719324473982e-6,62
+GO:BP,GO:0061919,process utilizing autophagic mechanism,8.986719324473982e-6,62
+GO:BP,GO:0043039,tRNA aminoacylation,9.240499500313442e-6,14
+GO:BP,GO:0006888,endoplasmic reticulum to Golgi vesicle-mediated transport,1.0651056726798025e-5,31
+GO:BP,GO:0043038,amino acid activation,1.2650346182193357e-5,14
+GO:BP,GO:0042398,modified amino acid biosynthetic process,1.5180901775197982e-5,17
+GO:BP,GO:0005975,carbohydrate metabolic process,1.614629432547394e-5,57
+GO:BP,GO:0007008,outer mitochondrial membrane organization,1.84892535129637e-5,8
+GO:BP,GO:0045040,protein insertion into mitochondrial outer membrane,1.84892535129637e-5,8
+GO:BP,GO:0009260,ribonucleotide biosynthetic process,2.1234420502915468e-5,35
+GO:BP,GO:0051246,regulation of protein metabolic process,2.4828544686309077e-5,200
+GO:BP,GO:0016241,regulation of macroautophagy,2.563457812005989e-5,41
+GO:BP,GO:0000070,mitotic sister chromatid segregation,3.217355426065052e-5,36
+GO:BP,GO:0043687,post-translational protein modification,3.786860235541229e-5,137
+GO:BP,GO:0016236,macroautophagy,4.407760986724919e-5,41
+GO:BP,GO:0006575,modified amino acid metabolic process,5.0326316883844576e-5,39
+GO:BP,GO:0046390,ribose phosphate biosynthetic process,5.2861043979873685e-5,35
+GO:BP,GO:0043412,macromolecule modification,5.314496426013779e-5,300
+GO:BP,GO:0006487,protein N-linked glycosylation,5.625908936985097e-5,18
+GO:BP,GO:0009206,purine ribonucleoside triphosphate biosynthetic process,6.511767847309777e-5,28
+GO:BP,GO:0044770,cell cycle phase transition,7.350971754404858e-5,77
+GO:BP,GO:0007059,chromosome segregation,7.441086057775469e-5,60
+GO:BP,GO:0009152,purine ribonucleotide biosynthetic process,7.575105868842322e-5,32
+GO:BP,GO:0009145,purine nucleoside triphosphate biosynthetic process,8.016391442079365e-5,28
+GO:BP,GO:0044772,mitotic cell cycle phase transition,8.503607817378556e-5,64
+GO:BP,GO:0010506,regulation of autophagy,8.77355333655493e-5,63
+GO:BP,GO:0006417,regulation of translation,9.159627573702805e-5,54
+GO:BP,GO:0098813,nuclear chromosome segregation,9.617295524205839e-5,49
+GO:BP,GO:0006754,ATP biosynthetic process,1.066938483494304e-4,26
+GO:BP,GO:1990748,cellular detoxification,1.2053423767436571e-4,29
+GO:BP,GO:0006399,tRNA metabolic process,1.3881546418635277e-4,29
+GO:BP,GO:0051179,localization,1.5688766087398494e-4,577
+GO:BP,GO:0006974,DNA damage response,1.618253804944854e-4,89
+GO:BP,GO:1903146,regulation of autophagy of mitochondrion,1.7176226122360172e-4,15
+GO:BP,GO:0009141,nucleoside triphosphate metabolic process,1.8344499022778969e-4,49
+GO:BP,GO:0006099,tricarboxylic acid cycle,1.8518875778249932e-4,13
+GO:BP,GO:0090114,COPII-coated vesicle budding,2.0261289859220885e-4,13
+GO:BP,GO:0140014,mitotic nuclear division,2.094037651189402e-4,44
+GO:BP,GO:0042775,mitochondrial ATP synthesis coupled electron transport,2.3415045167813099e-4,25
+GO:BP,GO:0042773,ATP synthesis coupled electron transport,2.3415045167813099e-4,25
+GO:BP,GO:0046034,ATP metabolic process,2.606147795732216e-4,29
+GO:BP,GO:0070647,protein modification by small protein conjugation or removal,2.789726071633639e-4,128
+GO:BP,GO:0000209,protein polyubiquitination,3.052737284446908e-4,28
+GO:BP,GO:1990542,mitochondrial transmembrane transport,3.0729372569543076e-4,11
+GO:BP,GO:0170034,L-amino acid biosynthetic process,3.314745197707063e-4,11
+GO:BP,GO:0042254,ribosome biogenesis,3.332721635270406e-4,51
+GO:BP,GO:0007346,regulation of mitotic cell cycle,3.87293093855996e-4,68
+GO:BP,GO:0033365,protein localization to organelle,3.938309108567907e-4,123
+GO:BP,GO:0051641,cellular localization,3.984085823852934e-4,214
+GO:BP,GO:0000422,autophagy of mitochondrion,3.989178992984136e-4,22
+GO:BP,GO:0044282,small molecule catabolic process,4.207809791131382e-4,61
+GO:BP,GO:1905820,positive regulation of chromosome separation,4.418949680876488e-4,11
+GO:BP,GO:0006164,purine nucleotide biosynthetic process,4.6541390651061237e-4,36
+GO:BP,GO:0006163,purine nucleotide metabolic process,4.6844498833690574e-4,60
+GO:BP,GO:0051234,establishment of localization,5.009834965840553e-4,250
+GO:BP,GO:1901264,carbohydrate derivative transport,5.731133463995168e-4,24
+GO:BP,GO:0032787,monocarboxylic acid metabolic process,5.927156142669908e-4,91
+GO:BP,GO:0006979,response to oxidative stress,5.970193716174956e-4,57
+GO:BP,GO:0080135,regulation of cellular response to stress,6.002897895072092e-4,62
+GO:BP,GO:0036211,protein modification process,6.118297107630033e-4,275
+GO:BP,GO:0097237,cellular response to toxic substance,6.32599157392983e-4,29
+GO:BP,GO:1901970,positive regulation of mitotic sister chromatid separation,6.521069965899735e-4,9
+GO:BP,GO:0009100,glycoprotein metabolic process,7.196978090425888e-4,36
+GO:BP,GO:0006631,fatty acid metabolic process,7.351887973194554e-4,66
+GO:BP,GO:0006488,dolichol-linked oligosaccharide biosynthetic process,7.445669336700369e-4,9
+GO:BP,GO:0051310,metaphase chromosome alignment,7.500078474217449e-4,23
+GO:BP,GO:0006259,DNA metabolic process,9.282164977375608e-4,112
+GO:BP,GO:0051306,mitotic sister chromatid separation,9.945533257351776e-4,15
+GO:BP,GO:0045048,protein insertion into ER membrane,9.966614948674238e-4,10
+KEGG,KEGG:05016,Huntington disease,0.0010773632828023922,21
+GO:BP,GO:0008654,phospholipid biosynthetic process,0.0013010550967591551,46
+GO:BP,GO:0008637,apoptotic mitochondrial changes,0.0013147876001417614,15
+GO:BP,GO:0009144,purine nucleoside triphosphate metabolic process,0.001324364371511318,45
+GO:BP,GO:0022904,respiratory electron transport chain,0.001422075650196851,26
+GO:BP,GO:0033036,macromolecule localization,0.0015027262986672988,324
+GO:BP,GO:0000819,sister chromatid segregation,0.001600803681046729,37
+GO:BP,GO:0042255,ribosome assembly,0.0020695530155139664,18
+GO:BP,GO:0009205,purine ribonucleoside triphosphate metabolic process,0.0020968746065174824,29
+GO:BP,GO:0006810,transport,0.002246005598892393,460
+GO:BP,GO:0048208,COPII vesicle coating,0.0023287099061182113,10
+GO:BP,GO:0048207,"vesicle targeting, rough ER to cis-Golgi",0.0023287099061182113,10
+GO:BP,GO:0006664,glycolipid metabolic process,0.0023465297928239844,20
+GO:BP,GO:1901990,regulation of mitotic cell cycle phase transition,0.0024079926949996003,49
+GO:BP,GO:0051640,organelle localization,0.002418887897387801,75
+KEGG,KEGG:05020,Prion disease,0.0024546487663353904,19
+GO:BP,GO:0009636,response to toxic substance,0.0025549528996968458,42
+GO:BP,GO:0022900,electron transport chain,0.002727594079095214,27
+GO:BP,GO:1903509,liposaccharide metabolic process,0.002745024408651513,20
+GO:BP,GO:0043648,dicarboxylic acid metabolic process,0.003222185358680148,21
+GO:BP,GO:2001242,regulation of intrinsic apoptotic signaling pathway,0.003343662596744767,25
+GO:BP,GO:0010564,regulation of cell cycle process,0.003462783201070782,88
+GO:BP,GO:1901607,alpha-amino acid biosynthetic process,0.00352453555820952,11
+GO:BP,GO:0019646,aerobic electron transport chain,0.003635707674022389,18
+GO:BP,GO:0006901,vesicle coating,0.003734937270786988,12
+GO:BP,GO:0006281,DNA repair,0.0037402419097946472,84
+GO:BP,GO:0048199,"vesicle targeting, to, from or within Golgi",0.003953599885017612,11
+GO:BP,GO:0098754,detoxification,0.004012994327251698,30
+GO:BP,GO:0006066,alcohol metabolic process,0.004049622929311077,57
+GO:BP,GO:1905897,regulation of response to endoplasmic reticulum stress,0.004370092239219922,16
+GO:BP,GO:0050000,chromosome localization,0.004393961434138033,24
+GO:BP,GO:0034976,response to endoplasmic reticulum stress,0.004411043033571614,42
+GO:BP,GO:1901987,regulation of cell cycle phase transition,0.004594279180352873,59
+GO:BP,GO:0051204,protein insertion into mitochondrial membrane,0.004734010079126471,9
+KEGG,KEGG:01230,Biosynthesis of amino acids,0.004859633173174731,17
+GO:BP,GO:0006839,mitochondrial transport,0.0049296397895700565,13
+GO:BP,GO:1903599,positive regulation of autophagy of mitochondrion,0.0049513141865878876,11
+GO:BP,GO:0008104,intracellular protein localization,0.005565682141988031,272
+GO:BP,GO:1901992,positive regulation of mitotic cell cycle phase transition,0.0056170701826863114,17
+GO:BP,GO:0097193,intrinsic apoptotic signaling pathway,0.005715055542708002,41
+GO:BP,GO:0170038,proteinogenic amino acid biosynthetic process,0.00604040010753397,10
+GO:BP,GO:0170036,import into the mitochondrion,0.006057888907482794,6
+GO:BP,GO:0016139,glycoside catabolic process,0.006174771015972746,5
+KEGG,KEGG:00510,N-Glycan biosynthesis,0.006254869858248633,15
+GO:BP,GO:2001243,negative regulation of intrinsic apoptotic signaling pathway,0.006388727847458215,18
+GO:BP,GO:0051304,chromosome separation,0.0063981381532420365,16
+GO:BP,GO:0070936,protein K48-linked ubiquitination,0.007218265967856252,17
+GO:BP,GO:0098869,cellular oxidant detoxification,0.007727575224167507,22
+GO:BP,GO:0051276,chromosome organization,0.007763787032248534,64
+GO:BP,GO:0000028,ribosomal small subunit assembly,0.008057758441964246,9
+GO:BP,GO:0007029,endoplasmic reticulum organization,0.008572399270583347,16
+GO:BP,GO:0061024,membrane organization,0.00867097823039305,80
+GO:BP,GO:1905818,regulation of chromosome separation,0.009777917578738232,15
+GO:BP,GO:0016054,organic acid catabolic process,0.009897362385266848,38
+GO:BP,GO:0046395,carboxylic acid catabolic process,0.009897362385266848,38
+GO:BP,GO:0043484,regulation of RNA splicing,0.009913907592693656,15
+GO:BP,GO:0015931,nucleobase-containing compound transport,0.010108316623416267,36
+GO:BP,GO:0009150,purine ribonucleotide metabolic process,0.010427403478910701,19
+GO:BP,GO:0070585,protein localization to mitochondrion,0.010444397242739805,14
+KEGG,KEGG:03050,Proteasome,0.010614181298441988,7
+KEGG,KEGG:05010,Alzheimer disease,0.010932049066695902,22
+GO:BP,GO:0006749,glutathione metabolic process,0.011035053975236634,15
+GO:BP,GO:0015986,proton motive force-driven ATP synthesis,0.011335875588428756,18
+GO:BP,GO:0055085,transmembrane transport,0.011356785343331344,95
+GO:BP,GO:0000280,nuclear division,0.011670464287817005,45
+GO:BP,GO:0010256,endomembrane system organization,0.01195135353937411,71
+KEGG,KEGG:05014,Amyotrophic lateral sclerosis,0.012771002852915065,4
+GO:BP,GO:0046394,carboxylic acid biosynthetic process,0.012900538307480466,51
+GO:BP,GO:0009259,ribonucleotide metabolic process,0.012925066727084992,35
+GO:BP,GO:0016042,lipid catabolic process,0.013741160235634285,41
+GO:BP,GO:0006665,sphingolipid metabolic process,0.0138384440975703,33
+GO:BP,GO:0031145,anaphase-promoting complex-dependent catabolic process,0.014263308767121086,7
+KEGG,KEGG:05130,Pathogenic Escherichia coli infection,0.014730606664929941,3
+GO:BP,GO:1901524,regulation of mitophagy,0.014772434152652867,12
+GO:BP,GO:0008219,cell death,0.014913506557703389,212
+GO:BP,GO:1901873,regulation of post-translational protein modification,0.01606921773298142,40
+GO:BP,GO:0008652,amino acid biosynthetic process,0.01629113510435151,11
+GO:BP,GO:0033044,regulation of chromosome organization,0.0164160650017887,28
+GO:BP,GO:0016053,organic acid biosynthetic process,0.01705152720524698,51
+GO:BP,GO:0051881,regulation of mitochondrial membrane potential,0.017563538770343258,11
+GO:BP,GO:0019377,glycolipid catabolic process,0.01758427337995706,8
+GO:BP,GO:0006637,acyl-CoA metabolic process,0.017853038025737802,23
+GO:BP,GO:0010965,regulation of mitotic sister chromatid separation,0.018361773790260435,13
+GO:BP,GO:0012501,programmed cell death,0.01858911725437558,226
+GO:BP,GO:0051988,regulation of attachment of spindle microtubules to kinetochore,0.019328525608541425,9
+GO:BP,GO:0009226,nucleotide-sugar biosynthetic process,0.0193642513734053,11
+GO:BP,GO:0019693,ribose phosphate metabolic process,0.019421867630582096,35
+GO:BP,GO:0000727,double-strand break repair via break-induced replication,0.019609135156069546,7
+GO:BP,GO:0097190,apoptotic signaling pathway,0.01973735170813547,57
+GO:BP,GO:0045842,positive regulation of mitotic metaphase/anaphase transition,0.020341080592344272,7
+GO:BP,GO:0033108,mitochondrial respiratory chain complex assembly,0.020656973392498723,23
+GO:BP,GO:0005996,monosaccharide metabolic process,0.022717232666322362,25
+GO:BP,GO:0034599,cellular response to oxidative stress,0.022747356932367097,40
+GO:BP,GO:0006672,ceramide metabolic process,0.02298758779295752,18
+GO:BP,GO:0046165,alcohol biosynthetic process,0.023283220546273246,28
+GO:BP,GO:0016126,sterol biosynthetic process,0.023358611621128726,18
+GO:BP,GO:0048193,Golgi vesicle transport,0.02392293107227024,47
+GO:BP,GO:1901989,positive regulation of cell cycle phase transition,0.0262729936474335,18
+GO:BP,GO:0070129,regulation of mitochondrial translation,0.0285737524475211,9
+KEGG,KEGG:03030,DNA replication,0.029039520315970554,17
+KEGG,KEGG:00190,Oxidative phosphorylation,0.02942921308541863,9
+GO:BP,GO:0045931,positive regulation of mitotic cell cycle,0.029518184294961263,25
+GO:BP,GO:0044272,sulfur compound biosynthetic process,0.03084021557986511,24
+GO:BP,GO:0009124,nucleoside monophosphate biosynthetic process,0.03113799839399433,14
+KEGG,KEGG:04110,Cell cycle,0.03182552708989084,29
+GO:BP,GO:0048285,organelle fission,0.031867527522994495,47
+GO:BP,GO:1902101,positive regulation of metaphase/anaphase transition of cell cycle,0.03188365005921306,7
+GO:BP,GO:0045786,negative regulation of cell cycle,0.03213862128267215,41
+GO:BP,GO:0015780,nucleotide-sugar transmembrane transport,0.03229090989477169,7
+GO:BP,GO:0072329,monocarboxylic acid catabolic process,0.03294535990244438,24
+GO:BP,GO:0072665,protein localization to vacuole,0.03344665843092586,16
+GO:BP,GO:0006260,DNA replication,0.03389838937212496,46
+GO:BP,GO:0000423,mitophagy,0.034081127819075116,17
+KEGG,KEGG:05022,Pathways of neurodegeneration - multiple diseases,0.03583251496439294,4
+GO:BP,GO:0016125,sterol metabolic process,0.03596629348678219,30
+GO:BP,GO:2001234,negative regulation of apoptotic signaling pathway,0.0365714612716873,28
+GO:BP,GO:0016050,vesicle organization,0.03720114350036197,46
+GO:BP,GO:0140694,membraneless organelle assembly,0.03779598422207212,61
+GO:BP,GO:0007006,mitochondrial membrane organization,0.03811478768530689,11
+GO:BP,GO:0006006,glucose metabolic process,0.040011126533574345,20
+GO:BP,GO:0016051,carbohydrate biosynthetic process,0.04007756875215493,18
+GO:BP,GO:0090068,positive regulation of cell cycle process,0.04046184248300427,30
+GO:BP,GO:0016072,rRNA metabolic process,0.04118938130738496,38
+GO:BP,GO:0019318,hexose metabolic process,0.04204171617588563,23
+GO:BP,GO:0000959,mitochondrial RNA metabolic process,0.04305410200232785,15
