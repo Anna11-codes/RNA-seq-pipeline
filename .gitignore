@@ -16,7 +16,6 @@ result_SRR*/
 .DS_Store
 
 # 5. Ignore R Markdown temporary cache and outputs
-*.html
 *_files/
 *_cache/
 .Rproj.user/
