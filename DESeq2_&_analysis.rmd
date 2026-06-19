@@ -2,7 +2,10 @@
 title: "Human RNA-Seq Differential Expression Analysis"
 author: "Ananya Bisht"
 date: "2026-06-06"
-output: html_document
+output:  
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ## Setup and Package Loading
@@ -16,7 +19,7 @@ library(pheatmap)
 library(EnhancedVolcano)
 ```
 
-```{r setup, message=FALSE}
+```{r}
 # 
 library(biomaRt)
 
@@ -42,7 +45,7 @@ tx2gene$tx_id <- gsub("\\..*$", "", tx2gene$tx_id)
 ```
 
 
-```{r setup, message=FALSE}
+```{r}
 # importing kallisto data into R
 
 # Use the absolute path to your folder
@@ -116,33 +119,15 @@ res_df <- as.data.frame(res) %>%
     rownames_to_column(var = "gene_name") %>%
     as_tibble()
 
-# 2. Filter for significant UP-regulated genes (expression doubled)
-sig_up <- res_df %>%
-    filter(padj < 0.05 & log2FoldChange > 1) %>%
-    arrange(padj)
-
-# 3. Filter for significant DOWN-regulated genes (expression halved)
-sig_down <- res_df %>%
-    filter(padj < 0.05 & log2FoldChange < -1) %>%
-    arrange(padj)
-
-# 4. See how many genes made the cut!
-nrow(sig_up)
-
-nrow(sig_down)
-
-```
-
-
-```{r}
-
-library(tidyverse)
-
-# 1. Permanently filter out the structural background noise using regex
-biologically_clean_df <- biologically_clean_df %>% 
+# 2. Permanently filter out the structural background noise using regex
+biologically_clean_df <- res_df %>% 
     filter(!str_detect(gene_name, "rRNA|RNA5-|^7SK|^U\\d+|^H[1-4][A-Z]|^H\\d|MT-|^LINC|^SNORD|^MIR|^RNU|^RNY"))
 
-# 2. Re-run your statistical thresholds using the newly polished data
+biologically_clean_df <- biologically_clean_df %>%
+    filter(log2FoldChange != "NA") %>%
+    filter(padj != "NA")
+
+# 3. run your statistical thresholds using the newly polished data
 sig_up <- biologically_clean_df %>% 
     filter(padj < 0.05 & log2FoldChange > 1) %>% 
     arrange(padj)
@@ -151,11 +136,18 @@ sig_down <- biologically_clean_df %>%
     filter(padj < 0.05 & log2FoldChange < -1) %>% 
     arrange(padj)
 
-# 3. Overwrite the saved CSV files so your spreadsheets match your graph
+# 4. Save CSV files 
 write_csv(sig_up, "DESeq2_significant_UP_genes.csv")
 write_csv(sig_down, "DESeq2_significant_DOWN_genes.csv")
 
+
+# 4. See how many genes made the cut
+nrow(sig_up)
+
+nrow(sig_down)
+
 ```
+
 
 ```{r}
 EnhancedVolcano(biologically_clean_df,
