@@ -1,8 +1,8 @@
-# RNA-Seq Transcript Quantification Pipeline ( Still working on it )
+# Bulk RNA-Seq Transcript Quantification Pipeline
 
 ## Project Overview
 
-This project implements a comprehensive RNA-Seq analysis pipeline for quantifying transcript expression levels from whole transcriptome sequencing data. 
+This project implements a comprehensive Bulk RNA-Seq analysis pipeline for quantifying transcript expression levels from whole transcriptome sequencing data. 
 
 The pipeline processes raw sequencing reads, converts them to a standardized format, and quantifies gene expression using pseudoalignment techniques. 
 
@@ -14,6 +14,11 @@ The results are used for downstream differential expression analysis in RStudio.
 **GEO Dataset Accession:** GSE265952
 
 This dataset contains paired-end RNA-Seq reads from 8 samples (SRR28816867-SRR28816874) sequenced on an Illumina platform. The data is used to study transcriptome-wide expression patterns.
+
+There are 4 samples treated with and the remaining 4 samples are the control.
+
+
+
 
 Link to dataset: 
 
